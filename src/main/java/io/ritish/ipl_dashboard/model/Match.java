@@ -132,7 +132,7 @@ public class Match {
         this.umpire2 = umpire2;
     }
 
-    public String setVenue() {
+    public String setVenue(String venue) {
         return venue;
     }
 
