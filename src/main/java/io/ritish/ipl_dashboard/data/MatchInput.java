@@ -15,8 +15,28 @@ public class MatchInput {
     private String match_winner;
     private String result;
     private String result_margin;
+    private String target_runs;
+    private String target_overs;
+    private String super_over;
+    private String method;
     private String umpire1;
     private String umpire2;
+
+    public String getTarget_runs() {
+        return target_runs;
+    }
+
+    public String getTarget_overs() {
+        return target_overs;
+    }
+
+    public String getSuper_over() {
+        return super_over;
+    }
+
+    public String getMethod() {
+        return method;
+    }
 
     // getters for all input fields
     public String getId() {
@@ -130,6 +150,22 @@ public class MatchInput {
 
     public void setUmpire2(String umpire2) {
         this.umpire2 = umpire2;
+    }
+
+    public void setTarget_runs(String target_runs) {
+        this.target_runs = target_runs;
+    }
+
+    public void setTarget_overs(String target_overs) {
+        this.target_overs = target_overs;
+    }
+
+    public void setSuper_over(String super_over) {
+        this.super_over = super_over;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
     }
 
 }

@@ -2,6 +2,7 @@ package io.ritish.ipl_dashboard.data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,11 +16,13 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
     @Override
     public Match process(final MatchInput matchInput) {
+        // FORMAT MY DATE
+        final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         Match match = new Match();
         match.setId(Long.parseLong(matchInput.getId()));
-        match.setCity(match.getCity());
-        match.setDate(LocalDate.parse(matchInput.getDate()));
+        match.setCity(matchInput.getCity());
+        match.setDate(LocalDate.parse(matchInput.getDate(), DATE_FORMATTER));
         match.setPlayerOfMatch(matchInput.getPlayer_of_match());
         match.setTeam1(matchInput.getTeam1());
         // had to fix
